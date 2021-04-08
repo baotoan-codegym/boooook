@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class ProgrammingBook {
     public static void main(String[] args) {
@@ -20,10 +21,19 @@ public class ProgrammingBook {
         System.out.println("tong tien 10 quyen sach la"+sum);
         for (int i =0;i<books.length;i++){
             if (books[i].language=="java"){
-                System.out.println("quyen sach day co ngon ngu la java");
+                System.out.println("quyen sach day co ngon ngu la java"+books[i].getName());
                 count++;
             }
             System.out.println("so sach co ngon ngu java la"+count);
+
+        }
+        System.out.println("Enter your money");
+        Scanner sc = new Scanner(System.in);
+        int money = sc.nextInt();
+        for (int i = 0; i < books.length; i++) {
+            if(books[i].getPrice() < money){
+                System.out.println("quyen sach gia thap hon la " + books[i].getName());
+            }
         }
     }
 }
